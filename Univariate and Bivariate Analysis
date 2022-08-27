@@ -1,0 +1,61 @@
+import pandas as pd
+df = pd.read_excel('F:\\PG\\Studies\\HR Analytic\\LR DATA.xlsx')
+df = pd.read_excel('F:\\PG\\Studies\\HR Analytic\\mean median mode.xlsx')
+df['percent_hike'].mean
+df['percent_hike'].median
+df['percent_hike'].mode
+----Range of Salary 2018
+df['salary_2018'].max()-df['salary_2018'].min()
+df['salary_2018'].quantile(0.75)-df['salary_2018'].quantile(0.25)
+df['slary_2018'].var()
+df['slary_2018'].std()
+df['slary_2018'].hist()
+
+df = pd.read_excel('F:\\PG\\Studies\\HR Analytic\\skewness.xlsx')
+df['manager_sat'].plt.hist()
+df['manager_sat'].skew()
+df['employee_sat'].plt.hist()
+df['employee_sat'].skew()
+df['percent_salary_hike'].plt.hist()
+df['percent_salary_hike'].skew()
+
+df = pd.read_excel('F:\\PG\\Studies\\HR Analytic\\mean median mode.xlsx')
+df['department'].value_counts()
+df['department'].(normalize=True)
+
+df['department'].value_counts().plot(kind= 'bar')
+
+df = pd.read_excel('F:\\PG\\Studies\\HR Analytic\\missing data.xlsx')
+df.isna.sum()
+df.isna.sum()/df.count*100
+df1 = df['employee_sat']
+df1 = df1.fillna(0)
+df1 = df1.fillna(df1.mean())
+df1 = df1.fillna(df1.median())
+-----------Find mode
+df1 = df['employee_sat']
+df.value_counts()
+
+--------detecting outlier by boxplot
+df1 = df[df.department == Human Resources]
+df1.boxplot[column= salary_2018]
+
+-----------detection by z score
+from scipy import stats
+z= stats.zscore(df1['salary_2018'])
+z
+
+---------------Treating outlier by mean/media/mode
+df2 = df1.copy
+df2.salary_2018[df2.salary_2018>200000 = df2.slary_2018.mean()
+
+---------Bivariate Analysis
+df.plot.scatter[x='Age', y='salary_2018']
+df.age.cov(salary_2018)
+df.age.corr(df.salary_2018)
+
+------------bivariate analysis of categorical data
+pd.crosstab(df.department, df.gender)
+pd.crosstab(df.department, df.gender).plot.bar(stacked= True)
+
+-------Hypothesis Testing
